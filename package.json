@@ -1,0 +1,29 @@
+{
+  "name": "ci-sample",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": {
+    "email": "mosluce@gmail.com",
+    "name": "mosluce"
+  },
+  "engines": {
+    "node": "8.1.0",
+    "yarn": "0.27.5"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha tests",
+    "lint": "./node_modules/.bin/eslint app.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.6.1",
+    "mocha": "^3.4.2",
+    "should": "^11.2.1",
+    "supertest": "^3.0.0"
+  }
+}
