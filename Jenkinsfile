@@ -1,14 +1,22 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'node'
+      args '-u root'
+    }
+    
+  }
   stages {
-    stage('install') {
+    stage('Build') {
       steps {
-        sh 'yarn install'
+        sh '''echo 'Building...'
+npm install'''
       }
     }
-    stage('test') {
+    stage('Test') {
       steps {
-        sh 'npm run test'
+        sh '''echo 'Testing...'
+npm test'''
       }
     }
   }
