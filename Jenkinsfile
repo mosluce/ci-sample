@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('install') {
       steps {
-        sh 'npm install'
+        sh 'yarn install'
       }
     }
     stage('test') {
@@ -11,5 +11,8 @@ pipeline {
         sh 'npm run test'
       }
     }
+  }
+  environment {
+    NODE_ENV = 'development'
   }
 }
