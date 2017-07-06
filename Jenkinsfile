@@ -9,17 +9,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'npm install'
+        sh '''npm i -g yarn
+yarn install'''
       }
     }
     stage('Test') {
       steps {
         sh 'npm test'
-      }
-    }
-    stage('Cleanup') {
-      steps {
-        cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, cleanupMatrixParent: true)
       }
     }
   }
